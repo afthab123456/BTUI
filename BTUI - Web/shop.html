@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="lib/css/style_shop.css">
+	<link rel="icon" type="image/x-icon" href="images/fav.png">
+</head>
+<body>       
+	<div class="container">
+		<img src="lib/images/apple can in bg.png" alt="productImage" id="productImage" > 
+		<div class="details">			
+			<h1 id="ProductName">Apple Juice</h1> 
+			<p id="ProductDescription">Pure, simple, and irresistibly delicious - our Classic Apple Juice is a celebration of orchard-fresh apples. Savor the familiar, crisp taste of handpicked apples in every sip. Refreshment in its most authentic form.</p>
+			<p id="Ingredients">Ingredients : Apples, Water, Sugar, Lemon juice</p> 
+			<h2 id="Price">Rs. 250</h2>
+			<p>Available Options :</p>
+			<div class="toggle-container">
+				<div class="toggle-box .selected" onclick="selectBox(this, '330ml')">330ml</div>
+				<div class="toggle-box" onclick="selectBox(this, '500ml')">500ml</div>
+			</div>
+			<button id="btn" onclick="buy_nav()"><i class="fa-solid fa-bag-shopping" style="margin-right: 10px;"></i>Buy Now</button>
+			<button id="btn" onclick="buy_nav()"><i class="fa-solid fa-cart-shopping" style="margin-right: 10px;"></i>Add to Cart</button>  
+		</div>
+	</div>
+	<script src="lib/js/script.js" defer></script>  
+      <script src="https://kit.fontawesome.com/4f78745e26.js" crossorigin="anonymous"></script>  
+	<script>
+		if (window.location.href.includes("shop.html")) {
+			const textValue = sessionStorage.getItem("textValue");
+			if (textValue === 'apple') {
+				document.getElementById("ProductName").innerText = 'Apple Juice';
+				document.getElementById("ProductDescription").innerText = 'Pure, simple, and irresistibly delicious - our Classic Apple Juice is a celebration of orchard-fresh apples. Savor the familiar, crisp taste of handpicked apples in every sip. Refreshment in its most authentic form.';
+				document.getElementById("Ingredients").innerText = 'Ingredients: Apples, Water, Sugar, Lemon juice';
+				document.getElementById("Price").innerText = 'Rs. 250';
+				document.getElementById("productImage").src = 'lib/images/apple can in bg.png';
+			} else if (textValue === 'orange') {
+				document.getElementById("ProductName").innerText = 'Orange Juice';
+				document.getElementById("ProductDescription").innerText = 'Our Orange Juice is a burst of citrus goodness. Made from the finest oranges, it offers a refreshing and zesty flavor that will awaken your taste buds. Start your day with a glass of pure vitality.';
+				document.getElementById("Ingredients").innerText = 'Ingredients: Oranges, Water, Sugar, Lemon juice';
+				document.getElementById("Price").innerText = 'Rs. 200';
+				document.getElementById("productImage").src = 'lib/images/orange can in bg.png';
+			} else if (textValue === 'mango') {
+				document.getElementById("ProductName").innerText = 'Mango Juice';
+				document.getElementById("ProductDescription").innerText = 'Indulge in the tropical delight of our Mango Juice. Made from the juiciest mangoes, this beverage is a symphony of sweet and tangy flavors that will transport you to a sun-soaked paradise.';
+				document.getElementById("Ingredients").innerText = 'Ingredients: Mangoes, Water, Sugar, Lime juice';
+				document.getElementById("Price").innerText = 'Rs. 300';
+				document.getElementById("productImage").src = 'lib/images/mango can in bg.png';
+			} else if (textValue === 'watermelon') {
+				document.getElementById("ProductName").innerText = 'Watermelon Juice';
+				document.getElementById("ProductDescription").innerText = "Stay refreshed with our Watermelon Juice. Bursting with hydrating goodness, it's the perfect choice for a hot summer day. Enjoy the pure, natural sweetness of sun-ripened watermelons."; 
+				document.getElementById("Ingredients").innerText = 'Ingredients: Watermelon, Water, Sugar, Mint leaves';
+				document.getElementById("Price").innerText = 'Rs. 180';
+				document.getElementById("productImage").src = 'lib/images/watermelon can in bg.png';
+			} else if (textValue === 'grapes') {
+				document.getElementById("ProductName").innerText = 'Grapes Juice';
+				document.getElementById("ProductDescription").innerText = 'Sip on the rich and flavorful Grapes Juice. Crafted from the finest grapes, it offers a delightful blend of sweetness and tartness. Experience the essence of vine-ripened grapes in every sip.';
+				document.getElementById("Ingredients").innerText = 'Ingredients: Grapes, Water, Sugar, Lemon juice';
+				document.getElementById("Price").innerText = 'Rs. 220';
+				document.getElementById("productImage").src = 'lib/images/grape can in bg.png';
+			}
+
+		} 
+		var selectedSize = '330ml';  
+		var price_changed = false; 
+
+		function selectBox(selectedBox, value) {
+			var boxes = document.querySelectorAll('.toggle-box');
+			boxes.forEach(function (box) {
+				box.classList.remove('selected');
+			});
+
+			selectedBox.classList.add('selected');
+			selectedSize = value; 
+			console.log(selectedSize);
+			change_price();
+		}
+
+		function change_price() {
+			let priceElement = document.getElementById("Price");
+			let currentPrice = parseInt(priceElement.innerText.match(/\d+/)[0]);
+
+			if (selectedSize === '330ml') {
+				if (price_changed === false) {
+					priceElement.innerText = `Rs. ${currentPrice}`;
+				} else {
+					priceElement.innerText = `Rs. ${currentPrice - 100}`;
+					price_changed = false; 
+				}
+			}
+
+			if (selectedSize === '500ml') {
+				if (price_changed === true) {
+					priceElement.innerText = `Rs. ${currentPrice}`;
+				} else {
+					priceElement.innerText = `Rs. ${currentPrice + 100}`;
+					price_changed = true; 
+				}
+			}
+		}
+		function buy_nav(){
+			var send_name = document.getElementById("ProductName").innerText; 
+			var send_size = selectedSize;
+			var price = document.getElementById("Price").innerText;
+			var img = document.getElementById("productImage").src; 
+			sessionStorage.setItem("productname", send_name);
+			sessionStorage.setItem("size", send_size);
+			sessionStorage.setItem("price", price); 
+			sessionStorage.setItem("img", img); 
+    		window.location.href = "buy_page.html";
+		}
+		
+ 
+	</script>
+</body>
+</html>
+ 

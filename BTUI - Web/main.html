@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FruitFiesta</title>
+    <link rel="stylesheet" href="lib/css/style.css"> 
+    <link rel="icon" type="image/x-icon" href="fav.png">
+</head>
+<body>
+    <div class="navbar">     
+      <a href="#">
+        <div class="icon-container">
+          <i class="fa-solid fa-house"></i>
+          <span class="tooltip">Home</span>
+        </div>         
+      </a>      
+      <a href="#about_us_section">
+        <div class="icon-container">
+          <i class="fa-solid fa-circle-info"></i>
+          <span class="tooltip">About Us</span>
+        </div>         
+      </a>
+      <a href="#products_section">
+        <div class="icon-container">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="tooltip">Products</span>
+        </div>         
+      </a>
+      <a href="#eco_section">
+        <div class="icon-container">
+          <i class="fa-solid fa-leaf"></i>
+          <span class="tooltip">Eco Friendly</span> 
+        </div>         
+      </a>
+      <a href="#FAQs_section"> 
+        <div class="icon-container">
+          <i class="fa-solid fa-question"></i>
+          <span class="tooltip">FAQs</span>  
+        </div>         
+      </a>
+      <a href="#contact_section"> 
+        <div class="icon-container">
+          <i class="fa-solid fa-address-book"></i>
+          <span class="tooltip">Contacts</span>        
+        </div>
+        
+      </a>
+    </div>
+    <section class="hero-banner" id="hero-banner">       
+        <div class="hero-banner__title" aria-hidden="true">FruitFiesta</div>
+        <img class="hero-banner__image" src="lib/images/cans.png"/>
+        <h1 class="hero-banner__title hero-banner__stroked-title">FruitFiesta</h1>
+        <img src="lib/images/down_arrow.png" alt="arrow" class="down_arrow" id="down_arrow">        
+    </section>   
+       
+      <section class="about_us_section" id="about_us_section">
+        <div class="line_about_us"></div> 
+        <div class="heading-wrapper-about"><h2 id="about_us_h2">About Us</h2> </div>
+         
+        <img src="lib/images/apple can.png" alt="apple can" id="can">
+        <div class="para-wrapper">
+        <p class="aboutus">Welcome to FruitFiesta, where we blend passion with nature to create a symphony of flavors in every sip! At FruitFiesta, we believe in the power of wholesome goodness and vibrant freshness. Our journey began with a simple goal: to bring the pure essence of sun-kissed fruits to your glass, delivering a burst of natural vitality with every drop. Handpicked from the finest orchards, our fruits undergo a meticulous journey from farm to bottle, ensuring that you experience the true taste of nature in every FruitFiesta creation.</p>
+        <a href="about.html"><button class="explore_btn">Explore More</button></a> 
+        </div>
+      </section>  
+      <section class="products_section" id="products_section">
+        
+        <div class="sticky-wrapper">
+          <div class="line_products"></div> 
+          <div class="heading-wrapper-products"><h2 id="product_h2">Products</h2></div> 
+            <div class="element-wrapper">
+              <div class="element">
+                <img src="lib/images/apple can.png" alt="" id="product_img">
+                <p id="product_description">Pure, simple, and irresistibly delicious - our Classic Apple Juice is a celebration of orchard-fresh apples. Savor the familiar, crisp taste of handpicked apples in every sip. Refreshment in its most authentic form.</p>
+                <button id="product_btn" onclick="shop_nav('apple')">See Details</button>
+                <button id="product_btn" onclick="shop_nav('apple')">Buy Now</button>
+              </div> 
+              <div class="element"> 
+                <img src="lib/images/mango can.png" alt="" id="product_img">
+                <p id="product_description">Indulge in the tropical goodness of our Mango Juice. Sweet, succulent, and packed with the exotic flavor of ripe mangoes. Close your eyes, take a sip, and let the taste transport you to paradise.</p>
+                <button id="product_btn" onclick="shop_nav('mango')">See Details</button>
+                <button id="product_btn" onclick="shop_nav('mango')">Buy Now</button>
+              </div> 
+              <div class="element"> 
+                <img src="lib/images/orange can.png" alt="" id="product_img">
+                <p id="product_description">Bright and citrusy, our Orange Juice is a burst of sunshine in a bottle. Made from the juiciest oranges, it's a refreshing and invigorating choice for any time of day. Pure, simple, and utterly satisfying.</p>
+                <button id="product_btn" onclick="shop_nav('orange')">See Details</button>
+                <button id="product_btn" onclick="shop_nav('orange')">Buy Now</button> 
+              </div>
+              <div class="element">
+                <img src="lib/images/grapes can.png" alt="" id="product_img">
+                <p id="product_description">Indulge in the deep, fruity richness of our Grape Juice. Bursting with the natural sweetness of plump grapes, each sip is a journey into vineyard perfection.</p>
+                <button id="product_btn" onclick="shop_nav('grapes')">See Details</button>
+                <button id="product_btn" onclick="shop_nav('grapes')">Buy Now</button>
+              </div> 
+              <div class="element">
+                <img src="lib/images/watermelon can.png" alt="" id="product_img">
+                <p id="product_description">Stay refreshed with the pure, hydrating taste of our Watermelon Juice. Savor the juiciness of ripe watermelon in every gulp, a delightful way to beat the heat and invigorate your senses.</p>
+                <button id="product_btn" onclick="shop_nav('watermelon')">See Details</button>
+                <button id="product_btn" onclick="shop_nav('watermelon')">Buy Now</button> 
+              </div>      
+              
+            </div>
+            <button id="find_more_btn">Find More</button>
+          </div>
+        
+      </section> 
+      <section class="eco_section" id="eco_section">
+        <div class="line_eco"></div>  
+        <div class="heading-wrapper-eco"><h2 id="eco_h2">Eco Friendly Products</h2></div>
+        <img src="lib/images/recycle can.png" alt="" id="recycle_can">
+        <div class="para-wrapper-eco">
+        <p class="eco">At our juice company, we've embraced sustainability by packaging our delicious beverages in aluminum cans. Why aluminum? It's not just about preserving the crisp taste of our juices; it's also a conscious choice for the planet. Aluminum is infinitely recyclable, meaning it can be recycled and reused over and over without losing its quality. By choosing our juices in aluminum cans, you're not just indulging in a refreshing drink; you're making an eco-friendly choice that helps reduce environmental impact. Join us in sipping responsibly – great taste, minimal footprint!</p>
+      </div> 
+        <a href="#products_section"><button id="eco_btn">Shop Green Sips Now</button></a>
+      </section> 
+      <section class="FAQs_section" id="FAQs_section"> 
+        <div class="line_products"></div> 
+        <div class="heading-wrapper-FAQ"><h2 id="FAQ_h2">FAQs</h2></div>
+        <img src="lib/images/FAQ.png" alt="" id="FAQ_img"> 
+        <div class="FAQs_container">        
+        <div class="question" onclick="toggleAnswer('answer1')">1. What makes your juices unique?</div>
+        <div class="answer" id="answer1">Our juices stand out for their exceptional taste, quality ingredients, and commitment to sustainability. We blend flavors that delight your taste buds while ensuring every sip reflects our dedication to a greener planet.</div>
+
+        <div class="question" onclick="toggleAnswer('answer2')">2. Where can I purchase your products?</div>
+        <div class="answer" id="answer2">You can find our juices in select stores near you. Explore our online store for a convenient way to order and have our beverages delivered right to your doorstep.</div>
+
+        <div class="question" onclick="toggleAnswer('answer3')">3. Do you offer any sugar-free or low-calorie options?</div>
+        <div class="answer" id="answer3">Yes, we have a range of options to suit different preferences, including sugar-free and low-calorie choices. Check out our product catalog to discover the perfect fit for your lifestyle.</div>
+
+        <div class="question" onclick="toggleAnswer('answer4')">4. Can I customize a juice bundle or subscription?</div>
+        <div class="answer" id="answer4">Absolutely! We understand that everyone has unique preferences. Explore our website to create a personalized juice bundle or subscribe to receive your favorite flavors regularly, hassle-free.</div>
+
+        <div class="question" onclick="toggleAnswer('answer5')">5. Are your products suitable for special dietary needs?</div>
+        <div class="answer" id="answer5">We strive to accommodate various dietary preferences. Our product descriptions include information on allergens and dietary considerations. If you have specific concerns, feel free to contact our customer support for assistance.</div>
+
+        <div class="question" onclick="toggleAnswer('answer6')">6. How can I stay updated on new product releases and promotions?</div>
+        <div class="answer" id="answer6">Stay in the loop by subscribing to our newsletter and following us on social media. We regularly share exciting updates, promotions, and sneak peeks of upcoming products with our valued customers.</div>
+
+        <div class="question" onclick="toggleAnswer('answer7')">7. What measures do you take to ensure product quality and safety?</div>
+        <div class="answer" id="answer7">Quality is our top priority. We adhere to strict quality control standards in sourcing, production, and packaging. Our facilities follow industry-best practices to ensure the safety and freshness of our juices.</div>
+
+        <div class="question" onclick="toggleAnswer('answer8')">8. Do you have a satisfaction guarantee or return policy?</div>
+        <div class="answer" id="answer8">Yes, we want you to be delighted with your purchase. Check out our return policy for details on how we handle returns and address any concerns you may have.</div>
+
+        <div class="question" onclick="toggleAnswer('answer9')">9. Are your juices suitable for children?</div>
+        <div class="answer" id="answer9">Many of our flavors are enjoyed by both adults and children. However, please check the product details for any age-specific recommendations or consult with your healthcare provider if you have specific concerns.</div>
+
+        <div class="question" onclick="toggleAnswer('answer10')">10. How can I contact your customer support?</div>
+        <div class="answer" id="answer10">We're here to help! You can reach our customer support team through the "Contact Us" page on our website. Whether you have questions about our products, need assistance with an order, or just want to share feedback, we're ready to assist you.</div>
+      </div>
+      <h6 id="more_question">Have More Question ? <a href="#contact_section" id="more_question_a">Contact Us</a></h6>
+      </section>
+      <section class="contact_section" id="contact_section">
+        <div class="line_contact"></div>  
+        <div class="heading-wrapper-contact"><h2 id="contact_h2">Contact Us</h2></div>
+
+        <div class="contact_container">
+        <div id="form_holder">
+          <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+        
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message here"></textarea>
+        
+            <button type="submit" id="form_btn">Submit</button>
+          </form>
+        </div>
+        
+        <div class="contact_info_holder">
+          <p>Email : info@fruitfiesta.com</p>
+          <p>Phone : +94 771234232</p>
+          <p>Address : Address: 123 Main Street, Cityville</p>
+          <div class="map_container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.96497977062!2d-84.58494261805598!3d33.767543406998236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA%2C%20USA!5e0!3m2!1sen!2slk!4v1700313068892!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div> 
+          <img src="lib/images/contact.jpeg" alt="" id="contact_img">
+        </div>
+      </section>
+      <section class="footer">
+        <h4>Join us with our social networks</h4>
+
+ 
+            <div class="icons">
+
+                <a href="https://www.facebook.com/RoyalCollegeLK/"> <i class="fa fa-facebook"></i></a>
+                <a href="https://www.youtube.com/royalcollegelk"> <i class="fa fa-youtube"></i></a>
+                <a href="https://twitter.com/royalcollegelk/"> <i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/royalcollegelk/"> <i class="fa fa-instagram"></i></a>
+
+            </div>
+            <p class="credit"> Designed by: Ahamed Nabeel and Developed by: Afthab Ahamed, Thrishank for Beyond The User Interface 2023  </p>
+      </section>
+      
+    <script src="https://kit.fontawesome.com/4f78745e26.js" crossorigin="anonymous"></script>  
+    <script src="lib/js/script.js" defer></script>   
+</body>  
+</html>   
+ 

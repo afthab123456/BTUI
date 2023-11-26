@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Our Product</title>
+    <link rel="stylesheet" href="lib/css/style_buy_page.css"> 
+    <link rel="icon" type="image/x-icon" href="fav.png">
+</head>
+<body>
+    <div class="navbar">     
+        <a href="main.html">  
+          <div class="icon-container">
+            <i class="fa-solid fa-house"></i>
+            <span class="tooltip">Home</span>
+          </div>         
+        </a>      
+        <a href="main.html#about_us_section">
+          <div class="icon-container">
+            <i class="fa-solid fa-circle-info"></i>
+            <span class="tooltip">About Us</span>
+          </div>         
+        </a>
+        <a href="main.html#products_section">
+          <div class="icon-container"> 
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="tooltip">Products</span>
+          </div>         
+        </a>
+        <a href="main.html#eco_section">
+          <div class="icon-container">
+            <i class="fa-solid fa-leaf"></i>
+            <span class="tooltip">Eco Friendly</span> 
+          </div>         
+        </a>
+        <a href="main.html#FAQs_section"> 
+          <div class="icon-container">
+            <i class="fa-solid fa-question"></i>
+            <span class="tooltip">FAQs</span>  
+          </div>         
+        </a>
+        <a href="main.html#contact_section"> 
+          <div class="icon-container">
+            <i class="fa-solid fa-address-book"></i>
+            <span class="tooltip">Contacts</span>        
+          </div>
+          
+        </a>
+      </div>
+    <div class="heading-wrapper-purchase"><h2 id="purchase_h2">Purchase</h2></div>
+
+    <div class="form_container">
+        <div class="selected_product">
+            <h2>Items</h2>
+            <div id="productImage">
+                <img src="lib/images/apple can in bg.png" alt="Product Image" id="img">
+                <div class="text_container_wrapper">
+                <div class="text_container">
+                    <h2 id="Name">Apple Juice</h2>
+                    <h3 id="size">330 ml</h3>
+                </div>
+            </div>
+                <div id="quantity-container">
+                    <button onclick="increaseQuantity(), updatePrice()" class="quantity-btn">+</button>                    
+                    <div class="quantity-wrapper">
+                      <input id="quantity" type="text" value="1">
+                    </div>
+                    <button onclick="decreaseQuantity(), updatePrice()" class="quantity-btn">-</button>
+                  </div>
+                  
+            </div> 
+            <button id="add_btn">Add More</button> 
+        </div>
+        <div class="Address">
+            <form id="purchaseForm">
+            <h2>Delivery Details</h2>             
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="note">Special Note</label>
+                <textarea id="note" name="address" rows="3"></textarea>
+            </form>
+        </div>
+    
+    
+        <div class="Payment">
+            <h2>Payment</h2>    
+            <form id="purchaseForm">   
+            <label for="cardHolder">Card Holder Name</label>
+            <input type="text" id="cardHolder" name="cardHolder" required>    
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        <div class="small_input_holder"> 
+            <div class="small_input">
+            <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+    </div>
+    <div class="small_input">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" required> </div>
+        </div>
+    
+        <div class="bill">
+            <div class="amount"><h2>Subtotal</h2><h2 id="price">Rs. 100</h2></div>
+            <div class="amount"><h2>Discount</h2><h2>Rs. 50</h2></div>
+            <div class="amount"><h2>Shipping</h2><h2>Free</h2></div>
+            <div class="line"></div>
+            <div class="amount"><h2>Total</h2><h2 id="total">Rs. 150</h2></div>
+        </div>
+
+        <button type="submit" class="submit">Place Order</button>
+    </form> 
+        </div>
+    </div>
+
+    <section class="footer">
+      <h4>Join us with our social networks</h4>
+          <div class="icons">
+              <a href="https://www.facebook.com/RoyalCollegeLK/"> <i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/royalcollegelk"> <i class="fa fa-youtube"></i></a>
+              <a href="https://twitter.com/royalcollegelk/"> <i class="fa fa-twitter"></i></a>
+              <a href="https://www.instagram.com/royalcollegelk/"> <i class="fa fa-instagram"></i></a>
+          </div>
+          <p class="credit">Designed by: Ahamed Nabeel and Developed by: Afthab Ahamed, Thrishank for Beyond The User Interface 2023</p>
+          <a href="main.html#contact_section" class="contact_ref">Need Help - Contact Us</a>
+          <p>Email : info@fruitfiesta.com | Phone : +94 771234232</p>
+           
+    </section>
+    <script>
+        window.addEventListener('load', function() {
+            updatePrice()
+        });
+        
+        let quantityInput = document.getElementById('quantity');
+      
+        function increaseQuantity() {
+          let currentQuantity = parseInt(quantityInput.value, 10);
+          quantityInput.value = currentQuantity + 1;
+        }
+      
+        function decreaseQuantity() {
+          let currentQuantity = parseInt(quantityInput.value, 10);
+          if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+          }
+        }
+
+            var fixed_price = '';
+            if (window.location.href.includes("buy_page.html")) {
+                const size = sessionStorage.getItem("size");
+                const name = sessionStorage.getItem("productname");
+                const price = sessionStorage.getItem("price");
+                const img = sessionStorage.getItem("img");
+                document.getElementById("size").innerText = size;
+                document.getElementById("Name").innerText = name;
+                document.getElementById("price").innerText = price;  
+                document.getElementById("img").src = img;
+                fixed_price = price;
+            }  
+            
+            function updatePrice() {
+  const quantityValue = parseInt(document.getElementById("quantity").value, 10); 
+  
+  const subtotal = parseInt(fixed_price.match(/\d+/)[0]) * quantityValue;
+  const total = subtotal - 50; 
+
+  document.getElementById("total").innerText =  `Rs. ${total}`;  
+  document.getElementById("price").innerText =  `Rs. ${subtotal}`;  
+}
+
+
+            
+
+
+        
+
+      </script>
+<script src="https://kit.fontawesome.com/4f78745e26.js" crossorigin="anonymous"></script>  
+<script src="scritp.js"></script> 
+</body>  
+</html>
+ 
